@@ -4,13 +4,13 @@ Requires PHP >= 8.1
 
 # Table of Contents
 
-- [Installation](#install)
+- [Installation](#installation)
 - [Usage](#usage)
 
 ## Installation
 
 ```sh
-composer require digioeopleinc/faker
+composer require digipeopleinc/faker
 ```
 
 ## Usage
