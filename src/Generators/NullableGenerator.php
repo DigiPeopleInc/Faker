@@ -1,6 +1,8 @@
 <?php
 namespace Digipeopleinc\Faker\Generators;
 
+use Exception;
+
 class NullableGenerator implements IGenerator
 {
     private float $weight;
@@ -24,7 +26,7 @@ class NullableGenerator implements IGenerator
      * Проверяет наличие вызываемого метода в модулях
      * Подгружает ресурсные файлы и выполняет метод
      *
-     * @throws \Exception
+     * @throws Exception
      *
      * @param string $name
      * @param array $arguments

@@ -199,4 +199,20 @@ class AbstractModule
     {
         return Xml::arrayToXml($source instanceof Closure ? (array)$source() : $source);
     }
+
+    /**
+     * Преобразовать в base64
+     * @param mixed $source
+     * @return string
+     */
+    public function base64(mixed $source): string
+    {
+        if ($source instanceof Closure) {
+            $source = $source();
+        }
+        if (!is_scalar($source)) {
+            $source = serialize($source);
+        }
+        return base64_encode($source);
+    }
 }

@@ -43,4 +43,10 @@ $html = $faker->html(
 );
 ```
 
+## Running tests
+
+```sh
+vendor/phpunit/phpunit/phpunit tests
+```
+
 See public methods in module classes located in /Modules directory 

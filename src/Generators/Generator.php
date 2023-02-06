@@ -5,6 +5,7 @@ use Digipeopleinc\Faker\Faker;
 use Digipeopleinc\Faker\Modules\AbstractModule;
 use Digipeopleinc\Faker\ResourceManager;
 use Exception;
+use ReflectionClass;
 
 class Generator implements IGenerator
 {
@@ -34,7 +35,7 @@ class Generator implements IGenerator
     function __call(string $methodName, array $arguments) {
         foreach(Faker::$modules as $module) {
             if (method_exists($module, $methodName)) {
-                $moduleName = (new \ReflectionClass($module))->getShortName();
+                $moduleName = (new ReflectionClass($module))->getShortName();
                 $moduleLocaleData = ResourceManager::getResource($moduleName, $this->locale);
                 /**
                  * @var AbstractModule $moduleObject

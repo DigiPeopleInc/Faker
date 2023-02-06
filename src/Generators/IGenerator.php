@@ -6,6 +6,8 @@ use Digipeopleinc\Faker\Modules\Date;
 use Digipeopleinc\Faker\Modules\Text;
 use Digipeopleinc\Faker\Modules\Payment;
 use Digipeopleinc\Faker\Modules\Color;
+use Digipeopleinc\Faker\Modules\File;
+use Digipeopleinc\Faker\Modules\Image;
 
 /**
  * @mixin Number
@@ -13,6 +15,8 @@ use Digipeopleinc\Faker\Modules\Color;
  * @mixin Text
  * @mixin Payment
  * @mixin Color
+ * @mixin File
+ * @mixin Image
  */
 interface IGenerator
 {

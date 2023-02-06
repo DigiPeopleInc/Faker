@@ -1,7 +1,10 @@
 /.idea
 /.vscode
 /build
+/test/tmp/*
+!/test/tmp/.gitkeep
 .env
 vendor
 composer.lock
 composer.phar
+.phpunit.result.cache

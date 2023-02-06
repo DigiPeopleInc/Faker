@@ -134,8 +134,7 @@ class Random
         $regex = preg_replace_callback('/\\\d/', 'static::oneDigit', $regex);
         $regex = preg_replace_callback('/(?<!\\\)\./', 'static::oneAscii', $regex);
         // remove remaining backslashes
-        $regex = str_replace('\\', '', $regex);
         // phew
-        return $regex;
+        return str_replace('\\', '', $regex);
     }
 }
