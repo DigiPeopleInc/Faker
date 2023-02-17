@@ -150,7 +150,7 @@ class Date extends AbstractModule
      */
     public function randomMinutes(): int
     {
-        return 60 * rand(0,59);
+        return 60 * rand(0,60);
     }
 
     /**
@@ -173,7 +173,7 @@ class Date extends AbstractModule
      */
     public function time(?string $format = null, int $minHour = 0, int $maxHour = 24): string
     {
-        return $this->formatTimestamp($format ?? $this->getFormat("time"), $this->randomSeconds() + $this->randomMinutes() + $this->randomHours($minHour, $maxHour));
+        return $this->formatTimestamp($format ?? $this->getFormat("time"), rand(3600 * $minHour, 3600 * $maxHour));
     }
 
     /**
@@ -217,7 +217,7 @@ class Date extends AbstractModule
             $to->modify($dateTo);
         }
         if ($dateTo instanceof DateTime) {
-            $to = $dateFrom;
+            $to = $dateTo;
         }
         return $this->formatTimestamp($format ?? $this->getFormat("date"), rand($from->getTimestamp(), $to->getTimestamp()), $timeZone);
     }

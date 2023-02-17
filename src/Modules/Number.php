@@ -30,6 +30,10 @@ class Number extends AbstractModule
         $delta = $max - $min;
         $multi = mt_rand() / mt_getrandmax();
         $result = $min + $delta * $multi;
-        return round($result, $comma);
+        $result = sprintf("%+.".$comma."f", round($result, $comma));
+        if ($result[-1] === "0" && $comma > 0) {
+            $result[-1] = "9";
+        }
+        return (float)$result;
     }
 }
