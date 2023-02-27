@@ -228,7 +228,11 @@ class Text extends AbstractModule
             };
         }
         if ((int)$result < 1) {
-            $result[-1] = 1;
+            if (strlen($result) < 1) {
+                $result = 1;
+            } else {
+                $result[-1] = 1;
+            }
         }
         return $result;
     }

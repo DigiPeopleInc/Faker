@@ -18,12 +18,34 @@ class Random
     }
 
     /**
+     * Случайное число с плавающей точкой
+     * @param int $min
+     * @param int $max
+     * @return float
+     */
+    public static function float(int $min = 0, int $max = 1): float
+    {
+        return $min + mt_rand() / mt_getrandmax() * ($max - $min);
+    }
+
+    /**
      * @throws Exception
      */
     public static function elementFromArray(array $array): mixed
     {
         if (empty($array)) {
             throw new Exception("Массив для выборки пуст");
+        }
+        return $array[array_rand($array)];
+    }
+
+    /**
+     * @throws Exception
+     */
+    public static function elementFromNullableArray(?array $array = null): mixed
+    {
+        if (empty($array)) {
+            return "";
         }
         return $array[array_rand($array)];
     }
