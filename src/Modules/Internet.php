@@ -92,7 +92,7 @@ class Internet extends AbstractModule
      * @return string
      * @throws Exception
      */
-    public function url(string $template = "https://{domain}/{category}/{slug}.php"): string
+    public function url(string $template = "https://{domain}/{category}/{slug}.html"): string
     {
         $result = $template;
         $result = preg_replace_callback(
@@ -102,7 +102,7 @@ class Internet extends AbstractModule
             '/{slug}/m', fn($match) => $this->slug(mt_rand(1, 5)), $result
         );
         return preg_replace_callback(
-            '/{domain}/m', fn($match) => $this->domain(mt_rand(2, 5), null), $result
+            '/{domain}/m', fn($match) => $this->domain(mt_rand(2, 5), "-"), $result
         );
     }
 
