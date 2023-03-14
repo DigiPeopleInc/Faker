@@ -18,10 +18,11 @@ class Image
         $cosAngle = cos($angle);
         $sinAngle = sin($angle);
         $return = [];
-        for ( $i = 0; $i < 7; $i += 2 ) {
+        for ($i = 0; $i < 7; $i += 2) {
             $return[$i] = round($coords[$i] * $cosAngle + $coords[$i + 1] * $sinAngle);
             $return[$i + 1] = round($coords[$i + 1] * $cosAngle - $coords[$i] * $sinAngle);
         }
+
         return $return;
     }
 }

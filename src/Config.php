@@ -1,4 +1,5 @@
 <?php
+
 namespace Digipeopleinc\Faker;
 
 define('DGPPL_FAKER_ROOT_DIR', __DIR__);
@@ -6,9 +7,9 @@ define('DGPPL_FAKER_ROOT_DIR', __DIR__);
 class Config
 {
     const AVAILABLE_LOCALES = ['ru_RU', 'en_US'];
-    const TEST_TMP_PATH = "tests\\tmp\\";
-    const SAMPLE_FILES_PATH = "files\\";
-    const PICTURE_FONT_PATH = "fonts\\arial.ttf";
+    const TEST_TMP_PATH = "tests" .DIRECTORY_SEPARATOR ."tmp".DIRECTORY_SEPARATOR;
+    const SAMPLE_FILES_PATH = "files".DIRECTORY_SEPARATOR;
+    const PICTURE_FONT_PATH = "fonts".DIRECTORY_SEPARATOR."arial.ttf";
     const PICTURE_MAX_WIDTH = 4096;
     const PICTURE_MAX_HEIGHT = 4096;
     const LOREMFLICKR_PICTURE_MAX_WIDTH = 1280;
@@ -20,7 +21,7 @@ class Config
      */
     public static function getRoot(): string
     {
-        return DGPPL_FAKER_ROOT_DIR."\\..\\";
+        return DGPPL_FAKER_ROOT_DIR.DIRECTORY_SEPARATOR."..".DIRECTORY_SEPARATOR;
     }
 
     /**
@@ -29,7 +30,7 @@ class Config
      */
     public static function getTestTmpPath(): string
     {
-        return self::getRoot()."\\".self::TEST_TMP_PATH;
+        return self::getRoot().DIRECTORY_SEPARATOR.self::TEST_TMP_PATH;
     }
 
     /**
@@ -38,7 +39,7 @@ class Config
      */
     public static function getSampleFilesPath(): string
     {
-        return self::getRoot()."\\".self::SAMPLE_FILES_PATH;
+        return self::getRoot().DIRECTORY_SEPARATOR.self::SAMPLE_FILES_PATH;
     }
 
     /**
@@ -47,6 +48,6 @@ class Config
      */
     public static function getFontPath(): string
     {
-        return self::getRoot()."\\".self::PICTURE_FONT_PATH;
+        return self::getRoot().DIRECTORY_SEPARATOR.self::PICTURE_FONT_PATH;
     }
 }
